@@ -1,0 +1,11 @@
+.initial-view{
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-image:  url('../images/bck.jpg');
+    display: flex;
+    align-items: flex-end;
+}
