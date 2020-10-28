@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SearchOption from './SearchOption';
 import { Button, Grid, makeStyles } from '@material-ui/core';
-import CardMusic from './CardMusic';
+import CardResult from './CardResult';
 
 const useStyles = makeStyles({
     btnCollection: {
@@ -10,24 +11,41 @@ const useStyles = makeStyles({
         right: '3%',
         fontSize: '18px'
     },
+    cardContainer: {
+        padding: '0 20px '
+    }
 });
 
 function Dashboard() {
     const classes = useStyles();
 
+    const [menuOption, setMenuOption] = useState(false);
+
+    const handleChangeView = () => {
+        setMenuOption(!menuOption);
+    };
+
     return (
         <div className='dashboard' >
-            <Grid container spacing={1} direction='column'>
+            <Grid container direction='column'>
                 <Grid item container justify='flex-end'>
-                    <Button variant="text" color="primary" className={classes.btnCollection}>
+                    {menuOption ? <Button variant="text" color="primary" className={classes.btnCollection} onClick={handleChangeView}>
                         mi colección
-                    </Button>
+                        </Button> :
+                        <Button variant="text" color="primary" className={classes.btnCollection} onClick={handleChangeView}>
+                            inicio
+                        </Button>
+                    }
+                    <Button variant="text" color="primary" className={classes.btnCollection} onClick={handleChangeView}>
+                        mi colección
+                        </Button>
                 </Grid>
                 <Grid item >
                     <SearchOption />
                 </Grid>
-
-
+                <Grid item container justify='center' alignItems='center' wrap='wrap' className={classes.cardContainer}>
+                    <CardResult />
+                </Grid>
             </Grid>
         </div >
     );

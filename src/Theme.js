@@ -9,14 +9,14 @@ const Theme = createMuiTheme({
             contrastText: '#2B2F30',
         },
         secondary: {
-            light: '#F04B42',
-            main: '#EF3E36',
-            dark: '#ED271D',
-            contrastText: '#F7F9FB',
+            light: '#737D96',
+            main: '#606980',
+            dark: '#464D5D',
+            contrastText: '#EDF7F6',
         },
         text: {
             primary: '#ffffff',
-            secondary: '#ffffff'
+            secondary: '#2B2F30'
         }
     },
 
@@ -27,11 +27,12 @@ const Theme = createMuiTheme({
             fontSize: '50px',
             letterSpacing: '2px',
         },
-        h2:{
+        h2: {
             fontWeight: 500,
             fontSize: '50px',
             letterSpacing: '2px',
-            margin: '5%'
+            marginLeft: '5%',
+            marginBottom: '30px'
         },
         h3: {
             fontSize: '50px',
