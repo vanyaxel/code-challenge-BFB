@@ -1,0 +1,5 @@
+{
+    "editor.autoIndent": "keep",
+    "prettier.useTabs": true,
+    "editor.formatOnSave": true
+}

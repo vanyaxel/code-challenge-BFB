@@ -14,6 +14,10 @@ const Theme = createMuiTheme({
             dark: '#ED271D',
             contrastText: '#F7F9FB',
         },
+        text: {
+            primary: '#ffffff',
+            secondary: '#ffffff'
+        }
     },
 
     typography: {
@@ -22,6 +26,12 @@ const Theme = createMuiTheme({
             fontWeight: 500,
             fontSize: '50px',
             letterSpacing: '2px',
+        },
+        h2:{
+            fontWeight: 500,
+            fontSize: '50px',
+            letterSpacing: '2px',
+            margin: '5%'
         },
         h3: {
             fontSize: '50px',
