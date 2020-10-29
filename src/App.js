@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -15,12 +14,15 @@ import Login from './components/Login/Login';
 import Collection from './components/Collection/Collection';
 
 export default function App() {
+
+  const [searchWord, setSearchWord] = useState(null);
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
           <Route exact path="/" render={() => <InitialView />} />
-          <Route path="/Dashboard" render={() => <Dashboard />} />
+          <Route path="/Dashboard" render={() => <Dashboard searchWord={searchWord} setSearchWord={setSearchWord} />} />
           <Route path="/login" render={() => <Login />} />
           <Route path="/collection" render={() => <Collection />} />
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
-import bckInitView from '../../images/bck-initView.png';
 import Detail from './Detail';
 
 const useStyles = makeStyles({
@@ -18,7 +17,7 @@ const useStyles = makeStyles({
     }
 });
 
-function CardResult() {
+function CardResult({ result }) {
     const classes = useStyles();
 
     return (
@@ -26,18 +25,15 @@ function CardResult() {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image={bckInitView}
+                    image={result.cover_image}
                     title="imagen"
                 />
                 <CardContent>
                     <Typography variant="h5" color="textSecondary" >
-                        Nirvana
+                        {result.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary"  >
-                        'ejemplo de album'
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary"  >
-                        20 enero 1980
+                        {result.year}
                     </Typography>
                 </CardContent>
             </CardActionArea>

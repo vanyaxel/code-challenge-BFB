@@ -16,10 +16,22 @@ const useStyles = makeStyles({
 
 });
 
-function SearchOption() {
+function SearchOption({ searchWord, setSearchWord }) {
 
     const classes = useStyles();
 
+    let word;
+
+    const handleInputChange = e => {
+        word = e.target.value;
+    };
+
+    const handleSearchWord = () => {
+        console.log('hola mundo');
+        setSearchWord(word);
+    };
+
+    console.log('esta palabra deberia ser word', searchWord);
     return (
         <Grid container wrap='wrap' direction='column' alignItems='flex-start'>
             <Typography variant="h4" >
@@ -33,8 +45,9 @@ function SearchOption() {
                     placeholder='Buscar por artista o por albúm'
                     variant='outlined'
                     className={classes.inputSearch}
+                    onChange={handleInputChange}
                 />
-                <Button variant="contained" color="primary" size='large' className={classes.btnSearch}>
+                <Button variant="contained" color="primary" size='large' className={classes.btnSearch} onClick={handleSearchWord} >
                     Buscar
             </Button>
             </Grid>
