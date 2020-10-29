@@ -35,8 +35,14 @@ const Theme = createMuiTheme({
             marginBottom: '30px'
         },
         h3: {
-            fontSize: '50px',
+            fontSize: '35px',
             letterSpacing: 2,
+        },
+        h4: {
+            fontSize: '25px',
+            letterSpacing: '2px',
+            marginLeft: '5%',
+            color: '#ffffff'
         }
     },
 

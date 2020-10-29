@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { Grid, makeStyles } from '@material-ui/core';
-import Pagination from '@material-ui/lab/Pagination';
 
 import CardResult from './CardResult';
 import Menu from './Menu';
@@ -13,6 +12,8 @@ const useStyles = makeStyles({
     cardContainer: {
         padding: '0 20px '
     },
+
+
     root: {
         maxWidth: 300,
         width: '200px',
@@ -32,12 +33,12 @@ function Dashboard() {
     const [results, setResults] = useState([]);
     const [pagination, setPagination] = useState([]);
 
-    const [searchWord, setSearchWord] = useState('pete');
-    const [prueba, setPrueba] = useState([]);
+    const [searchWord, setSearchWord] = useState('kean');
 
+    const url1 = 'https://api.discogs.com/database/search?q=';
+    const url2 = '&key=APfaGNnkOUxUvwAZCJcf&secret=qoBhqMCwayvzZixqBwqQFgIbqSWZaBWY';
 
-    const discogsUrl = `https://api.discogs.com/database/search?q=${searchWord}&key=APfaGNnkOUxUvwAZCJcf&secret=qoBhqMCwayvzZixqBwqQFgIbqSWZaBWY&page=${2}&per_page=${50}`;
-
+    const discogsUrl = url1 + searchWord + url2;
 
     useEffect(() => {
 
@@ -45,16 +46,12 @@ function Dashboard() {
             .then(res => res.json())
             .then(data => {
                 setResults(data.results);
-                setPagination(data.pagination.urls);
+                setPagination(data.pagination);
             });
-
     }, []);
 
-    console.log(pagination);
-
-    const handleChangePage = e => {
-        console.log(e.target);
-    };
+    console.log('results', results);
+    console.log('pagination', pagination);
 
     return (
         <div className='dashboard' >
@@ -98,14 +95,9 @@ function Dashboard() {
                         ))
                     }
                 </Grid>
-                <Grid>
-                    <Pagination count={pagination.pages} color="primary" onClick={(e) => handleChangePage(e.target)} />
-                </Grid>
             </Grid>
         </div >
     );
 }
 
 export default Dashboard;
-
-

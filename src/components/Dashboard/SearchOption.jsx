@@ -4,9 +4,9 @@ import { Grid, TextField, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
     inputContainer: {
-        marginLeft: '5%',
+        paddingLeft: '5%',
     },
-    input: {
+    inputSearch: {
         width: '300px',
         margin: '0 30px 15px 0'
     },
@@ -21,7 +21,10 @@ function SearchOption() {
     const classes = useStyles();
 
     return (
-        <Grid container wrap='wrap' direction='column' alignItems='flex-start' xs={12} sm={12}>
+        <Grid container wrap='wrap' direction='column' alignItems='flex-start'>
+            <Typography variant="h4" >
+                Bienvenid@ NOMBRE
+           </Typography>
             <Typography variant="h2" color="primary" >
                 ¿qué estas buscando?
            </Typography>
@@ -29,13 +32,12 @@ function SearchOption() {
                 <TextField
                     placeholder='Buscar por artista o por albúm'
                     variant='outlined'
-                    className={classes.input}
+                    className={classes.inputSearch}
                 />
                 <Button variant="contained" color="primary" size='large' className={classes.btnSearch}>
                     Buscar
             </Button>
             </Grid>
-
         </Grid>
     );
 }

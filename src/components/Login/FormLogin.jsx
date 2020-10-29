@@ -1,14 +1,12 @@
 import React from 'react';
 import '../styles.css';
 import { Link } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import { Button, Grid, TextField, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
-    root: {
+    formContainer: {
         backgroundColor: 'rgba(0,0,0, .70)',
         width: '270px',
         padding: '20px',
@@ -20,14 +18,21 @@ const useStyles = makeStyles({
         margin: '35px',
         textAlign: 'center'
     },
+    inputContainer: {
+        maxWidth: '500px !important',
+        flexBasis: 'inherit'
+    },
     input: {
         marginBottom: '10px'
     },
     btnLogin: {
         margin: '30px'
     },
-    btn: {
+    btnLink: {
         textDecoration: 'none'
+    },
+    color: {
+        color: 'red'
     }
 });
 
@@ -35,7 +40,7 @@ function FormLogin() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <div className={classes.formContainer}>
             <Grid
                 container
                 direction='column'
@@ -43,6 +48,7 @@ function FormLogin() {
                 sm={12} md={12} lg={12}
                 justify='center'
                 alignItems='center'
+                className={classes.inputContainer}
             >
                 <Grid item className={classes.header}>
                     <Typography gutterBottom variant="h4" color='primary'>
@@ -52,18 +58,21 @@ function FormLogin() {
                         Inicia Sesión
                     </Typography>
                 </Grid>
-                <Grid className={classes.inputContainer}>
+                <Grid item container justify='center'>
                     <TextField
-                        id="filled-basic"
-                        label="Nombre de usuario" variant="outlined" color='default' className={classes.input} />
-                    <Typography variant="h5" gutterBottom color='primary'>
-                    </Typography>
+                        placeholder='Nombre'
+                        variant='outlined'
+                        className={classes.input}
+                    />
                     <TextField
-                        id="filled-basic"
-                        label="Contraseña" variant="outlined" color='primary' type="password" className={classes.input} />
+                        placeholder='Contraseña'
+                        type='password'
+                        variant='outlined'
+                        className={classes.input}
+                    />
                 </Grid>
                 <Grid className={classes.btnLogin}>
-                    <Link to='/dashboard' className={classes.btn}>
+                    <Link to='/dashboard' className={classes.btnLink}>
                         <Button variant="contained" color="primary" >
                             Entrar
                     </Button>
