@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 const key = process.env.REACT_APP_DISCOGS_KEY;
 const secret = process.env.REACT_APP_DISCOGS_SECRET;
 
-function useFetchData(page, searchWord) {
+export function useFetchData(page, searchWord) {
 
     const [results, setResults] = useState([]);
 
@@ -16,7 +16,16 @@ function useFetchData(page, searchWord) {
 
 
     return results;
-
 }
 
-export default useFetchData;
+export function useFetchCollection() {
+
+    const [collection, setCollection] = useState([]);
+
+    useEffect(() => {
+        Axios.get(`https://api.discogs.com/users/vanyaxel/collection/folders/0/releases`)
+            .then(res => setCollection(res.data.releases));
+    }, []);
+
+    return collection;
+}

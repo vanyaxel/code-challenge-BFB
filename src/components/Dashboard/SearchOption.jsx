@@ -3,15 +3,13 @@ import Button from '@material-ui/core/Button';
 import { Grid, TextField, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-    inputContainer: {
-        paddingLeft: '5%',
-    },
     inputSearch: {
         width: '300px',
         margin: '0 30px 15px 0'
     },
     btnSearch: {
-        height: '53px'
+        height: '53px',
+        marginBottom: '50px'
     },
 
 });
@@ -40,7 +38,7 @@ function SearchOption({ searchWord, setSearchWord }) {
             <Typography variant="h2" color="primary" >
                 ¿qué estas buscando?
            </Typography>
-            <Grid item container className={classes.inputContainer} justify='flex-start'>
+            <Grid item container >
                 <TextField
                     placeholder='Buscar por artista o por albúm'
                     variant='outlined'

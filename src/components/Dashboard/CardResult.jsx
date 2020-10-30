@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
-import noPhoto from '../../images/no-photo.png';
+
 import Detail from './Detail';
 
 const useStyles = makeStyles({
@@ -9,7 +9,6 @@ const useStyles = makeStyles({
         maxWidth: 400,
         width: '300px',
         height: '310px',
-        margin: '20px',
     },
     media: {
         height: 140,

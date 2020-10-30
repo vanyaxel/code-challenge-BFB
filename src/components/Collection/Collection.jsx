@@ -1,30 +1,23 @@
 import React from 'react';
 
-import { Grid, makeStyles, Typography } from '@material-ui/core';
-
-import CardResult from '../Dashboard/CardResult';
+import { Grid, Typography } from '@material-ui/core';
+import '../styles.css';
+import CardCollection from './CardCollection';
 import Menu from '../Layout/Menu';
 
-const useStyles = makeStyles({
-    cardContainer: {
-        padding: '0 20px '
-    }
-});
-
 function Collection() {
-    const classes = useStyles();
 
     return (
         <div className='dashboard' >
-            <Grid container direction='column'>
+            <Grid container direction='column' >
                 <Menu />
-                <Grid item >
-                    <Typography variant="h2" color="primary">
-                        mi colección
+                <Grid item container direction='column' className='collection-view'>
+                    <Grid item  >
+                        <Typography className='title-collection' color="primary">
+                            mi colección
                     </Typography>
-                </Grid>
-                <Grid item container justify='center' alignItems='center' wrap='wrap' className={classes.cardContainer}>
-                    <CardResult />
+                    </Grid>
+                    <CardCollection />
                 </Grid>
             </Grid>
         </div >
