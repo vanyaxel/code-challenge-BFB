@@ -11,7 +11,8 @@ const useStyles = makeStyles({
         minWidth: '290px',
     }
 });
-export default function AlertDialog() {
+
+export default function Detail({ result }) {
 
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
@@ -23,6 +24,8 @@ export default function AlertDialog() {
     const handleClose = () => {
         setOpen(false);
     };
+
+    console.log(result);
 
     return (
         <div>
@@ -43,11 +46,37 @@ export default function AlertDialog() {
                 </DialogActions>
                 <DialogContent>
                     <Typography variant="h5" color="secondary">
-                        Nirvana
+                        {result.title}
+                    </Typography>
+                    <img src={result.thumb} alt={result.cover_image} />
+                    <Typography variant="body1" color="secondary">
+                        <strong>País: </strong> {result.country}
                     </Typography>
                     <Typography variant="body1" color="secondary">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora, consectetur. Tenetur nostrum sapiente placeat, officia quisquam accusantium laudantium harum eius, non fuga aut praesentium quis! Repellat maiores possimus harum praesentium!
+                        <strong>País: </strong> {result.genre}
                     </Typography>
+                    <Typography variant="body1" color="secondary">
+                        <strong>Tipo de formato:</strong>
+                    </Typography>
+                    <Typography variant="body1" color="secondary">
+                        <strong>Label: </strong> {result.label}
+                    </Typography>
+                    <Typography variant="body1" color="secondary">
+                        <strong>Tipo: </strong> {result.type}
+                    </Typography>
+                    <Typography variant="body1" color="secondary">
+                        <strong>Estilo: </strong> {result.style}
+                    </Typography>
+                    {
+                        result.format ? result.format.map(item =>
+                            <Typography variant="body2" color="secondary">
+                                - {item}
+                            </Typography>
+
+                        )
+                            :
+                            <div>no hay fromato</div>
+                    }
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} color="primary" variant='contained'>

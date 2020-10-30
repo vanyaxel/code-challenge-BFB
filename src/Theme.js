@@ -43,6 +43,10 @@ const Theme = createMuiTheme({
             letterSpacing: '2px',
             marginLeft: '5%',
             color: '#ffffff'
+        },
+        body2: {
+            textTransform: 'capitalize',
+            letterSpacing: 0,
         }
     },
 

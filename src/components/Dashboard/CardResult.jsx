@@ -1,19 +1,24 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
+import noPhoto from '../../images/no-photo.png';
 import Detail from './Detail';
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 300,
-        width: '200px',
-        margin: '20px'
+        maxWidth: 400,
+        width: '300px',
+        height: '310px',
+        margin: '20px',
     },
     media: {
         height: 140,
     },
-    color: {
-        color: 'red'
+    content: {
+        height: '84px'
+    },
+    footer: {
+        float: 'right'
     }
 });
 
@@ -28,17 +33,23 @@ function CardResult({ result }) {
                     image={result.cover_image}
                     title="imagen"
                 />
-                <CardContent>
-                    <Typography variant="h5" color="textSecondary" >
+                <CardContent className={classes.content}>
+                    <Typography variant="body1" color="textSecondary" >
                         {result.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary"  >
-                        {result.year}
+                        <strong> Tipo:</strong>  {result.type}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary"  >
+                        <strong> Año:</strong>  {result.year}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary"  >
+                        <strong> Año:</strong>  {result.year}
                     </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions>
-                <Detail />
+            <CardActions className={classes.footer} >
+                <Detail result={result} />
             </CardActions>
         </Card>
     );

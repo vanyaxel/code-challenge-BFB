@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { Button, Grid, makeStyles } from '@material-ui/core';
 
-import Menu from './Menu';
+import Menu from '../Layout/Menu';
 import SearchOption from './SearchOption';
 import CardResult from './CardResult';
 
@@ -23,6 +23,9 @@ const useStyles = makeStyles({
     },
     color: {
         color: 'red'
+    },
+    footer: {
+        height: '50px',
     }
 });
 
@@ -41,7 +44,6 @@ function Dashboard({ searchWord, setSearchWord }) {
                 <Grid item >
                     <SearchOption searchWord={searchWord} setSearchWord={setSearchWord} />
                 </Grid>
-
                 <Grid item container justify='center' alignItems='center' wrap='wrap' className={classes.cardContainer}>
                     {
                         results.map(result => (
@@ -49,18 +51,17 @@ function Dashboard({ searchWord, setSearchWord }) {
                         ))
                     }
                 </Grid>
-
-                <Grid>
+                <Grid item container justify='center' className={classes.footer}>
                     {page !== 1 ?
-                        <Button variant="contained" color="primary" onClick={() => setPage(page - 1)}>
-                            anterior
-                    </Button>
+                        <Button variant="text" color="primary" onClick={() => setPage(page - 1)} style={{ margin: '20px' }}>
+                            Anterior
+                        </Button>
                         :
                         null
                     }
-                    <Button variant="contained" color="primary" onClick={() => setPage(page + 1)}>
-                        siguiente
-                    </Button>
+                    <Button variant="text" color="primary" onClick={() => setPage(page + 1)} style={{ margin: '20px' }}>
+                        Siguiente
+                        </Button>
                 </Grid>
             </Grid>
         </div >

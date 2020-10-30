@@ -3,7 +3,7 @@ import React from 'react';
 import { Grid, makeStyles, Typography } from '@material-ui/core';
 
 import CardResult from '../Dashboard/CardResult';
-import Menu from '../Dashboard/Menu';
+import Menu from '../Layout/Menu';
 
 const useStyles = makeStyles({
     cardContainer: {

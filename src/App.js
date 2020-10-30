@@ -15,7 +15,7 @@ import Collection from './components/Collection/Collection';
 
 export default function App() {
 
-  const [searchWord, setSearchWord] = useState(null);
+  const [searchWord, setSearchWord] = useState('');
 
   return (
     <ThemeProvider theme={theme}>

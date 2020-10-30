@@ -9,7 +9,7 @@ function useFetchData(page, searchWord) {
     const [results, setResults] = useState([]);
 
     useEffect(() => {
-        Axios.get(`https://api.discogs.com/database/search?q=${searchWord}&key=${key}&secret=${secret}&page=${page}&per_page=${50}`)
+        Axios.get(`https://api.discogs.com/database/search?q=${searchWord}&key=${key}&secret=${secret}&page=${page}&per_page=${10}`)
             .then(res => setResults(res.data.results));
 
     }, [page, searchWord]);
