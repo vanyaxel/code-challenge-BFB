@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #2b2f30;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
