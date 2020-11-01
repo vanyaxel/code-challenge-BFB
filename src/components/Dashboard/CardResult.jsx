@@ -8,13 +8,13 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 400,
         width: '300px',
-        height: '310px',
+        height: '287px',
     },
     media: {
         height: 140,
     },
     content: {
-        height: '84px'
+        height: '75px'
     },
     footer: {
         float: 'right'
@@ -36,15 +36,16 @@ function CardResult({ result }) {
                     <Typography variant="body1" color="textSecondary" >
                         {result.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary"  >
-                        <strong> Tipo:</strong>  {result.type}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary"  >
-                        <strong> Año:</strong>  {result.year}
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary"  >
-                        <strong> Año:</strong>  {result.year}
-                    </Typography>
+                    {
+                        result.year ?
+                            <Typography variant="body2" color="textSecondary"  >
+                                <strong> Año:</strong>  {result.year}
+                            </Typography>
+                            :
+                            <Typography variant="body2" color="textSecondary"  >
+                                <strong> Año:</strong> No hay información
+                            </Typography>
+                    }
                 </CardContent>
             </CardActionArea>
             <CardActions className={classes.footer} >

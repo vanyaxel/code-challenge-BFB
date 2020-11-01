@@ -9,14 +9,15 @@ const Theme = createMuiTheme({
             contrastText: '#2B2F30',
         },
         secondary: {
-            light: '#737D96',
-            main: '#606980',
-            dark: '#464D5D',
-            contrastText: '#EDF7F6',
+            light: '#FFDD33',
+            main: '#ffd400',
+            dark: '#E0BB00',
+            contrastText: '#2B2F30',
         },
         text: {
             primary: '#ffffff',
-            secondary: '#2B2F30'
+            secondary: '#2B2F30',
+            other: '#000000'
         }
     },
 
@@ -47,7 +48,6 @@ const Theme = createMuiTheme({
             letterSpacing: 0,
         }
     },
-
     shape: {
         borderRadius: 10
     },

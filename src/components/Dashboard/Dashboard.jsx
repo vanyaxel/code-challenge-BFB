@@ -17,18 +17,20 @@ const useStyles = makeStyles({
     color: {
         color: 'red'
     },
+    initialText: {
+        marginTop: '80px'
+    },
     footer: {
         height: '50px',
     }
 });
 
-
-function Dashboard({ searchWord, setSearchWord }) {
+function Dashboard({ artist, setArtist, album, setAlbum }) {
     const [page, setPage] = useState(1);
 
     const classes = useStyles();
 
-    const results = useFetchData(page, searchWord);
+    const results = useFetchData(page, artist, album);
 
     return (
         <div className='dashboard' >
@@ -36,28 +38,30 @@ function Dashboard({ searchWord, setSearchWord }) {
                 <Menu />
                 <Grid item container direction='column' className='collection-view'>
                     <Grid item >
-                        <SearchOption searchWord={searchWord} setSearchWord={setSearchWord} />
+                        <SearchOption setArtist={setArtist} setAlbum={setAlbum} />
                     </Grid>
                     <Grid item container justify='left' spacing={4} >
-                        {
+                        {results ?
                             results.map(result => (
                                 <Grid item container justify='space-around' sm={6} md={3} xg={2}>
                                     <CardResult key={uuidv4()} result={result} />
                                 </Grid>
                             ))
+                            :
+                            <p>buscando</p>
                         }
                     </Grid>
                     <Grid item container justify='center' className={classes.footer}>
                         {page !== 1 ?
                             <Button variant="text" color="primary" onClick={() => setPage(page - 1)} style={{ margin: '20px' }}>
                                 Anterior
-                        </Button>
+                                    </Button>
                             :
                             null
                         }
                         <Button variant="text" color="primary" onClick={() => setPage(page + 1)} style={{ margin: '20px' }}>
                             Siguiente
-                        </Button>
+                                </Button>
                     </Grid>
                 </Grid>
             </Grid>

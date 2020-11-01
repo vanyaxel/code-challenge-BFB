@@ -15,14 +15,16 @@ import Collection from './components/Collection/Collection';
 
 export default function App() {
 
-  const [searchWord, setSearchWord] = useState('');
+  const [artist, setArtist] = useState('');
+  const [album, setAlbum] = useState('');
+
 
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
           <Route exact path="/" render={() => <InitialView />} />
-          <Route path="/Dashboard" render={() => <Dashboard searchWord={searchWord} setSearchWord={setSearchWord} />} />
+          <Route path="/Dashboard" render={() => <Dashboard artist={artist} setArtist={setArtist} album={album} setAlbum={setAlbum} />} />
           <Route path="/login" render={() => <Login />} />
           <Route path="/collection" render={() => <Collection />} />
 
