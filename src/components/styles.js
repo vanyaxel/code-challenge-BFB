@@ -54,7 +54,7 @@ const useStyles = makeStyles({
     },
     //detail
     dialog: {
-        width: '60%',
+        width: '80%',
         minWidth: '290px',
     },
     header: {
@@ -88,14 +88,14 @@ const useStyles = makeStyles({
         width: '100%',
     },
     titleInfoDetail: {
-        width: '350px',
+        width: 'fit-content',
         fontSize: '17px',
         fontWeight: 'bolder',
         margin: '5px 0 5px 20px',
     },
     //dashboard
     pagination: {
-        height: '50px',
+        height: '150px',
     },
     searchContainer: {
         marginBottom: '30px'

@@ -10,6 +10,8 @@ const token = process.env.REACT_APP_DISCOGS_TOKEN;
 const verifier = process.env.REACT_APP_DISCOGS_VERIFIER;
 let timeStamp = Date.now();
 
+toast.configure();
+
 export function postReleases(id) {
 
     let myHeaders = new Headers();
@@ -38,7 +40,7 @@ export function postReleases(id) {
         })
         .catch(error => {
             console.log('error', error);
-            toast.warning('Lo lamento, no se agrego', {
+            toast.error('Lo lamento, no se agrego', {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,
