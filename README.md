@@ -3,15 +3,15 @@
 ## Resumen del proyecto
 Discogs es una plataforma que tiene como objetivo recolectar información acerca de los discos comerciales, promocionales, y discos no oficiales. Desde ella puedes crear colecciones, comprar y tener una lista de deseos. <br>
 
-Para este reto de código se utilizo la base de datos y se uso la  [API de Discogs](https://www.discogs.com/developers). <br>
+Para este reto de código se utilizó la base de datos y se usó la  [API de Discogs](https://www.discogs.com/developers). <br>
 El sitio es responsivo.
 
 ## Objetivos a desarrollar
 
 1. Búsqueda por artista, album o ambos. <br>
 2. Mostrar la información de forma paginada. <br>
-3. Mostar detalles de los resultados de la busqueda en un componente diferente (en este caso fue un modal). <br>
-4. Mostrar la colección de la carpeta ALL. <br>
+3. Mostar detalles de los resultados de la búsqueda en un componente diferente (en este caso fue un modal). <br>
+4. Mostrar la colección de la carpeta "ALL". <br>
 5. Poder agregar nuevos elemntos a la colección. <br>
 
 ## Herramientas utilizadas
