@@ -8,9 +8,8 @@ import {
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './Theme.js';
 
-import InitialView from './components/Login/InitialView';
+import InitialView from './components/InitialView/InitialView';
 import Dashboard from './components/Dashboard/Dashboard';
-import Login from './components/Login/Login';
 import Collection from './components/Collection/Collection';
 
 export default function App() {
@@ -25,7 +24,6 @@ export default function App() {
         <Switch>
           <Route exact path="/" render={() => <InitialView />} />
           <Route path="/Dashboard" render={() => <Dashboard artist={artist} setArtist={setArtist} album={album} setAlbum={setAlbum} />} />
-          <Route path="/login" render={() => <Login />} />
           <Route path="/collection" render={() => <Collection />} />
 
         </Switch>

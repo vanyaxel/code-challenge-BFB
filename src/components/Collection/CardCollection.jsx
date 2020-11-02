@@ -1,65 +1,29 @@
 import React from 'react';
 import { v4 as uuid4 } from 'uuid';
 
-import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
-
+import useStyles from '../styles';
 import { useFetchCollection } from '../../utils/useFetchData';
-
-const useStyles = makeStyles({
-    root: {
-        minWidth: 275,
-        width: '100%',
-        height: 'fit-content',
-        border: 'solid 2px #B5FD0D',
-        background: 'none',
-        boxShadow: '0px 0px 4px 2px #B5FD0D',
-        margin: '0 25px 25px 0'
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(1.3)',
-        color: '#ffd400'
-    },
-    colTitle: {
-        width: '75px',
-    },
-    titleInfo: {
-        fontSize: '14px',
-        fontWeight: 500,
-        color: '#ffd400',
-        margin: 0,
-    },
-    textInfo: {
-        fontSize: 14,
-        margin: 0,
-        color: '#ffffff',
-    },
-    cardContainer: {
-        padding: '0',
-    }
-});
 
 export default function CardCollection() {
     const classes = useStyles();
 
     const collection = useFetchCollection();
-    const bull = <span className={classes.bullet}>•</span>;
 
-    console.log('collection', collection);
+    const bull = <span className={classes.bulletCard}>•</span>;
+
     return (
         <Grid container justify='space-between' className={classes.cardContainer}  >
             {
                 collection.map(release => (
                     <Grid item container justify='space-between' sm={12} md={6}>
-                        <Card key={release.id} className={classes.root} variant="outlined" >
+                        <Card key={release.id} className={classes.cardCollection} variant="outlined" >
                             <CardContent>
                                 <table >
                                     <tbody>
                                         <tr>
-                                            <td className={classes.colTitle}>
-                                                <Typography className={classes.titleInfo} color="secondary">
+                                            <td className={classes.colTitleCollection}>
+                                                <Typography className={classes.titleInfoCollection} color="secondary">
                                                     Artista:
                                         </Typography>
                                             </td>
@@ -70,8 +34,8 @@ export default function CardCollection() {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className={classes.colTitle}>
-                                                <Typography className={classes.titleInfo} color="secondary">
+                                            <td className={classes.colTitleCollection}>
+                                                <Typography className={classes.titleInfoCollection} color="secondary">
                                                     Titulo:
                                         </Typography>
                                             </td>
@@ -82,8 +46,8 @@ export default function CardCollection() {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className={classes.colTitle}>
-                                                <Typography className={classes.titleInfo} color="secondary">
+                                            <td className={classes.colTitleCollection}>
+                                                <Typography className={classes.titleInfoCollection} color="secondary">
                                                     Año:
                                         </Typography>
                                             </td>
@@ -94,8 +58,8 @@ export default function CardCollection() {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className={classes.colTitle}>
-                                                <Typography className={classes.titleInfo} color="secondary">
+                                            <td className={classes.colTitleCollection}>
+                                                <Typography className={classes.titleInfoCollection} color="secondary">
                                                     Fecha de adición:
                                         </Typography>
                                             </td>
@@ -106,8 +70,8 @@ export default function CardCollection() {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className={classes.colTitle}>
-                                                <Typography className={classes.titleInfo} color="secondary">
+                                            <td className={classes.colTitleCollection}>
+                                                <Typography className={classes.titleInfoCollection} color="secondary">
                                                     Formato:
                                         </Typography>
                                             </td>
@@ -118,8 +82,8 @@ export default function CardCollection() {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className={classes.colTitle}>
-                                                <Typography className={classes.titleInfo} color="secondary">
+                                            <td className={classes.colTitleCollection}>
+                                                <Typography className={classes.titleInfoCollection} color="secondary">
                                                     Género(s):
                                         </Typography>
                                             </td>
@@ -134,8 +98,8 @@ export default function CardCollection() {
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td className={classes.colTitle}>
-                                                <Typography className={classes.titleInfo} color="secondary">
+                                            <td className={classes.colTitleCollection}>
+                                                <Typography className={classes.titleInfoCollection} color="secondary">
                                                     Estilo(s):
                                         </Typography>
                                             </td>

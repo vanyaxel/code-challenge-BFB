@@ -1,30 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { makeStyles } from '@material-ui/core/styles';
+import useStyles from '../styles';
 import { Grid, Typography } from '@material-ui/core';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
+import '../styles.css';
 
-const useStyles = makeStyles({
-    title: {
-        flexGrow: 1,
-        backgroundColor: 'rgba(0,0,0,0.70)',
-        padding: '30px 40px'
-    },
-    icon: {
-        fontSize: '100px'
-    }
-});
-
-function Title() {
+function InitialView() {
     const classes = useStyles();
-
     return (
-        <div className={classes.title}>
+        <div className='initial-view'>
             <Grid
                 container
                 alignItems='center'
                 justify='space-between'
+                className={classes.titleDiscogs}
             >
                 <Grid item xs={12} sm={10} >
                     <Typography gutterBottom variant="h1" color='primary' >
@@ -35,7 +25,7 @@ function Title() {
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={2} container alignItems='flex-start'>
-                    <Link to='/login'>
+                    <Link to='/dashboard'>
                         <PlayCircleFilledIcon color='primary' className={classes.icon} />
                     </Link>
                 </Grid>
@@ -44,4 +34,4 @@ function Title() {
     );
 }
 
-export default Title;
+export default InitialView;

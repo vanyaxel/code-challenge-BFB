@@ -6,14 +6,13 @@ import CardCollection from './CardCollection';
 import Menu from '../Layout/Menu';
 
 function Collection() {
-
     return (
         <div className='dashboard' >
             <Grid container direction='column' >
                 <Menu />
                 <Grid item container direction='column' className='collection-view'>
                     <Grid item  >
-                        <Typography className='title-collection' color="primary">
+                        <Typography variant='h2' color="primary">
                             mi colección
                     </Typography>
                     </Grid>

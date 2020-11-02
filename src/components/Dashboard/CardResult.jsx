@@ -1,31 +1,13 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
-
+import useStyles from '../styles';
 import Detail from './Detail';
-
-const useStyles = makeStyles({
-    root: {
-        maxWidth: 400,
-        width: '300px',
-        height: '287px',
-    },
-    media: {
-        height: 140,
-    },
-    content: {
-        height: '75px'
-    },
-    footer: {
-        float: 'right'
-    }
-});
 
 function CardResult({ result }) {
     const classes = useStyles();
 
     return (
-        <Card className={classes.root}>
+        <Card className={classes.cardResult}>
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
@@ -48,7 +30,7 @@ function CardResult({ result }) {
                     }
                 </CardContent>
             </CardActionArea>
-            <CardActions className={classes.footer} >
+            <CardActions className={classes.cardFooter} >
                 <Detail result={result} />
             </CardActions>
         </Card>

@@ -1,21 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, makeStyles } from '@material-ui/core';
-
-const useStyles = makeStyles({
-    btnCollection: {
-        margin: '30px',
-        position: 'relative',
-        right: '3%',
-        fontSize: '18px',
-        textTransform: 'lowercase'
-    },
-    btnLink: {
-        textDecoration: 'none',
-        color: 'inherit'
-    }
-});
+import { Button } from '@material-ui/core';
+import useStyles from '../styles';
 
 function BtnMenu(props) {
 
