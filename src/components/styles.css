@@ -21,10 +21,6 @@
 	background-image: url("../images/bck-blur.png");
 }
 
-/* .prueba {
-	height: 100vh;
-}
- */
 .dashboard {
 	width: 100vw;
 }
@@ -33,9 +29,8 @@
 	padding: 0 70px;
 }
 
-.title-collection{
-	font-weight: 500 !important;
-	font-size: 50px !important;
-	letter-spacing: 2px !important;
-	margin-bottom: 30px !important;
+.toastColor{
+	background-color: #B5FD0D !important;
+	border: solid black 2px !important;
+	color: #000000
 }
