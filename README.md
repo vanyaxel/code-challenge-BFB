@@ -8,11 +8,11 @@ El sitio es responsivo.
 
 ## Objetivos a desarrollar
 
-1. Búsqueda por artista, album o ambos. <br>
+1. Búsqueda por artista, álbum o ambos. <br>
 2. Mostrar la información de forma paginada. <br>
 3. Mostar detalles de los resultados de la búsqueda en un componente diferente (en este caso fue un modal). <br>
 4. Mostrar la colección de la carpeta "ALL". <br>
-5. Poder agregar nuevos elemntos a la colección. <br>
+5. Poder agregar nuevos elementos a la colección. <br>
 
 ## Herramientas utilizadas
 1. React.js
