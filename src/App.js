@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from './Theme.js';
@@ -16,7 +12,6 @@ export default function App() {
 
   const [artist, setArtist] = useState('');
   const [album, setAlbum] = useState('');
-
 
   return (
     <ThemeProvider theme={theme}>

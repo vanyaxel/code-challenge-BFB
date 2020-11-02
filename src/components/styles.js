@@ -46,7 +46,7 @@ const useStyles = makeStyles({
     //searchOption
     inputSearch: {
         width: '300px',
-        margin: '0 30px 15px 0'
+        margin: '0 30px 15px 0 !important'
     },
     btnSearch: {
         height: '53px',
@@ -58,7 +58,7 @@ const useStyles = makeStyles({
         minWidth: '290px',
     },
     header: {
-        color: '#908b8b'
+        color: '#615c5c !important'
     },
     bulletDetail: {
         display: 'inline-block',

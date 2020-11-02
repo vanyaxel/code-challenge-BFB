@@ -36,6 +36,17 @@ export function postReleases(id) {
                 className: 'toastColor'
             });
         })
-
-        .catch(error => console.log('error', error));
+        .catch(error => {
+            console.log('error', error);
+            toast.warning('Lo lamento, no se agrego', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                className: 'toastColor'
+            });
+        });
 }
